@@ -1,0 +1,7 @@
+##[pylyzer] failed /home/maxisusi/Documents/dev/q14/lib.py 1695456202 280
+.os = pyimport "os"
+
+.___v_desugar_1 = pyimport "termcolor"
+.colored: Never
+.cleanup_terminal: () -> Never
+.display_close: () -> Never
