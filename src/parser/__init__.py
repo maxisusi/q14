@@ -1,7 +1,7 @@
-import requests
+import requests_cache
 from bs4 import BeautifulSoup as bs
 from lib import fill_array 
-from ui import display_close, display_loading
+from ui import display_loading
 
 def fetch_page(debug: bool): 
     end_point = 'https://accueil.emploilausanne.ch/menu-de-la-semaine/menu-de-la-semaine/'
@@ -9,7 +9,8 @@ def fetch_page(debug: bool):
         return bs(open('assets/index.html'), 'html.parser')
     else:
         display_loading()
-        q14_page = requests.get(end_point)
+        session = requests_cache.CachedSession(expire_after=20)
+        q14_page = session.get(end_point)
         return bs(q14_page.content, 'html.parser')
 
 def format_menu(soup: bs) -> dict[str, list[str]] | None :
