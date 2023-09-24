@@ -7,12 +7,12 @@ import click
 def main(debug):
     debug_mode = debug 
     soup = fetch_page(debug_mode)
-    dict_plates = format_menu(soup)
+    get_menus = format_menu(soup)
 
-    if dict_plates == None:
+    if get_menus == None:
         display_close()
     else:
-        display_menu(dict_plates)
+        display_menu(get_menus)
 
 
 if __name__ == "__main__":

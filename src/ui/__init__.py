@@ -16,13 +16,11 @@ def display_menu(dict_plates: dict[str, list[str]]):
             click.echo(f"🥩: {meat}")
             click.echo(f"🥬: {veggie}")
         click.echo("-------------------------")
-    exit()
 
 def display_close():
     cleanup_terminal()
     warning_text= colored("😎 Profitez du weekend, les plats arrivent!", 'red')
     click.echo(warning_text)
-    exit()
 
 def display_loading():
     cleanup_terminal()
