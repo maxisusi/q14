@@ -12,12 +12,12 @@ def fetch_page(debug: bool):
         q14_page = requests.get(end_point)
         return bs(q14_page.content, 'html.parser')
 
-def format_menu(soup: bs) -> dict[str, list[str]]:
+def format_menu(soup: bs) -> dict[str, list[str]] | None :
     get_days = soup.select("div.accordeon-holder h3")
     get_plates = soup.select('div.plat-du-jour h4 + p')
 
-    if(len(get_days) == 0):
-        return display_close()
+    if(len(get_days) == 0 or len(get_plates) == 0):
+        return None 
     else:
         days = []
         plates = []
