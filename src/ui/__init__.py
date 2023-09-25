@@ -3,7 +3,7 @@ import click
 from lib import cleanup_terminal
 
 def display_menu(dict_plates: dict[str, list[str]]):
-    cleanup_terminal()
+    click.clear()
     for key, value in dict_plates.items():
         click.echo(f"☀️  {key}")
         click.echo("")
@@ -18,11 +18,11 @@ def display_menu(dict_plates: dict[str, list[str]]):
         click.echo("-------------------------")
 
 def display_close():
-    cleanup_terminal()
-    warning_text= colored("😎 Profitez du weekend, les plats arrivent!", 'red')
+    click.clear()
+    warning_text= colored("😎 Il faut être patient, les plats arrivent!", 'red')
     click.echo(warning_text)
 
 def display_loading():
-    cleanup_terminal()
+    click.clear()
     click.echo("🍽️ Menu de la semaine...")
 
