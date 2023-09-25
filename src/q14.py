@@ -8,7 +8,6 @@ def main(debug):
     debug_mode = debug 
     soup = fetch_page(debug_mode)
     get_menus = format_menu(soup)
-
     if get_menus == None:
         display_close()
     else:
